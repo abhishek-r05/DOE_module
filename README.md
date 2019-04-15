@@ -9,6 +9,7 @@ Some of the usage include:
 
 
 There is a ipynb uploaded which walks over basic usage of the module.
-There is a pre-requisite to import supporting module like pyDOE and diversipy. These library have the implementation of algorithms to create
-latin hypercube.
+There is a pre-requisite to import supporting module like pyDOE and diversipy. These library have the implementation of algorithms to create latin hypercube.
+
+
 
