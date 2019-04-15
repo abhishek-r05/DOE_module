@@ -30,12 +30,10 @@ class doeMaster(object):
     def listPackages(self):
         """
         Can be used to view all the eligible packages.
-        NOTE : Dakota installation is not validation.
         :return: List of Available Packages
         """
 
         listSourcePackages = []
-        listSourcePackages.append('dakota')
         try:
             import pyDOE
             listSourcePackages.append('pyDOE')
@@ -60,9 +58,7 @@ class doeMaster(object):
             object of the Wrapper Class corresponding to the input package name, error string incase of invalid package
 
         """
-        if str(packageName).lower() == 'dakota':
-            wrapperObj = dakotaMaster()
-        elif str(packageName).lower() == 'pydoe':
+        if str(packageName).lower() == 'pydoe':
             wrapperObj = pyDOEMaster()
         elif str(packageName).lower() == 'diversipy':
             wrapperObj = diversipyMaster()
@@ -865,7 +861,4 @@ class diversipyMaster(doeMaster):
 if __name__ == '__main__':
     obj = doeMaster()
     lhsMatrix = obj.setPackage('pyDOE').lhs(nSamples=10, nInputs=2)
-    print(obj.lhsCorrScore(lhsMatrix))
-    print(obj.lhsDistScore(lhsMatrix))
-    obj.setPackage('dakota').lhs(nSamples=10, nInputs=2, inputDistribution=[['uniform'], ['uniform']],
-                                 addDiscreteVars=[['a', 'b', 'c']])
+    
